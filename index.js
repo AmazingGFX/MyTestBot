@@ -10,16 +10,16 @@ client.on("ready", () => {
   client.user.setActivity("your status");
 });
 
-client.on("message", msg => {
-  if (msg.content === "!help") {
-    msg.reply(
-      "Hello, Help is here! Commands:!ping,!kick @user,!ban @user,!avater,!creators and !servercount!"
-    );
-  }
-});
 
-client.on("ready", () => {
-  console.log("Online");
+client.on('message', message => {
+if(message.content === "x!commands") {
+let embed = new MessageEmbed()
+.setTitle("Command List")
+.setDescription("`Your commands`")
+.setColor("#FF0000")
+.setFooter("Made by your name and tag")
+message.channel.send(embed)
+}
 });
 client.on("message", msg => {
   if (msg.content === "!ping") {
